@@ -59,12 +59,10 @@ client.query(query, (err, res) => {
   } else {
     console.log(res.rows[0])
   }
-
-  console.log('query************************************');
 })
 
 // promise
 
 client.query(query)
-  .then(res => console.log(res.rows[0]))
+  .then(res => console.log('query********************'))
   .catch(e => console.error(e.stack))
