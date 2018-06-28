@@ -26,22 +26,22 @@ express()
   connectionString: connectionString,
 })
 
-pool.query('SELECT NOW()', (err, res) => {
-  console.log(err, res)
-  console.log('OSVALDO IS HERE ***********************')
-  pool.end()
-})
+// pool.query('SELECT NOW()', (err, res) => {
+//   console.log(err, res)
+//   console.log('OSVALDO IS HERE ***********************')
+//   pool.end()
+// })
 
 const client = new Client({
   connectionString: connectionString,
 })
 client.connect()
 
-client.query('SELECT NOW()', (err, res) => {
-  console.log(err, res)
-  console.log('THERE IT IS *****************')
-  client.end()
-})
+// client.query('SELECT NOW()', (err, res) => {
+//   console.log(err, res)
+//   console.log('THERE IT IS *****************')
+//   client.end()
+// })
 
 
 // Another
@@ -63,3 +63,6 @@ client.query(query, (err, res) => {
 
 // promise
 
+client.query(query)
+  .then(res => console.log(res.rows[0]))
+  .catch(e => console.error(e.stack))
