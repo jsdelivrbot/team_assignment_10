@@ -50,10 +50,17 @@ const query = {
   name: 'fetch-user',
   text: 'SELECT * FROM parents WHERE id = $1',
   values: [1]
+  console.log('Here is the other complete***************');
 }
 
 // callback
-
+client.query(query, (err, res) => {
+  if (err) {
+    console.log(err.stack)
+  } else {
+    console.log(res.rows[0])
+  }
+})
 
 // promise
 
