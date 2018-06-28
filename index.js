@@ -20,12 +20,15 @@ express()
 
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
+
+
   const pool = new Pool({
   connectionString: connectionString,
 })
 
 pool.query('SELECT NOW()', (err, res) => {
   console.log(err, res)
+  console.log('OSVALDO IS HERE ***********************')
   pool.end()
 })
 
@@ -36,6 +39,7 @@ client.connect()
 
 client.query('SELECT NOW()', (err, res) => {
   console.log(err, res)
+  console.log('THERE IT IS *****************')
   client.end()
 })
 
