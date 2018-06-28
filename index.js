@@ -49,7 +49,7 @@ const query = {
   // give the query a unique name
   name: 'fetch-user',
   text: 'SELECT * FROM parents WHERE id = $1',
-  values: [100]
+  values: [1]
 }
 
 // callback
