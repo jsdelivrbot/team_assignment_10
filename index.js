@@ -48,7 +48,7 @@ client.query('SELECT NOW()', (err, res) => {
 const query = {
   // give the query a unique name
   name: 'fetch-user',
-  text: 'SELECT * FROM user WHERE id = $1',
+  text: 'SELECT * FROM parents WHERE id = $1',
   values: [1]
 }
 
