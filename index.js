@@ -59,6 +59,8 @@ client.query(query, (err, res) => {
   } else {
     console.log(res.rows[0])
   }
+
+  console.log('query************************************');
 })
 
 // promise
