@@ -63,6 +63,3 @@ client.query(query, (err, res) => {
 
 // promise
 
-client.query(query)
-  .then(res => console.log('query********************'))
-  .catch(e => console.error(e.stack))
