@@ -50,7 +50,6 @@ const query = {
   name: 'fetch-user',
   text: 'SELECT * FROM parents WHERE id = $1',
   values: [1]
-  console.log('Here is the other complete***************');
 }
 
 // callback
