@@ -65,7 +65,7 @@ function connection(req,respond){
 	    var lastName = res.rows[0].lastname;
 	    var dateBirth = res.rows[0].datebirth;
 
-	    params = {firstname : firstName, lastName: lastName, dateBirth : dateBirth};
+	    params = {firstName : firstName, lastName: lastName, dateBirth : dateBirth};
 	    respond.render('pages/result', params);
 	  }
 	})
