@@ -15,16 +15,47 @@ express()
   .get('/getPerson', function(req, res){
 
 	res.render('pages/index');
+	connection();
+
 
   })
 
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 
+function connection(){
 
-  const pool = new Pool({
-  connectionString: connectionString,
-})
+	  const pool = new Pool({
+	  connectionString: connectionString,
+	})
+
+    const client = new Client({
+  		connectionString: connectionString,
+	})
+	client.connect()
+
+
+	const query = {
+	  // give the query a unique name
+	  name: 'fetch-user',
+	  text: 'SELECT * FROM parents WHERE id = $1',
+	  values: [1]
+	}
+
+	// callback
+	client.query(query, (err, res) => {
+	  if (err) {
+	    console.log(err.stack)
+	  } else {
+	    console.log(res.rows[0].lastname),
+	    console.log('THE OTHER ROWWWWWWWWWWWWWWW***************************')
+	    res.render('pages/index');
+	  }
+	})
+
+
+}
+
 
 // pool.query('SELECT NOW()', (err, res) => {
 //   console.log(err, res)
@@ -32,10 +63,7 @@ express()
 //   pool.end()
 // })
 
-const client = new Client({
-  connectionString: connectionString,
-})
-client.connect()
+
 
 // client.query('SELECT NOW()', (err, res) => {
 //   console.log(err, res)
@@ -45,22 +73,7 @@ client.connect()
 
 
 // Another
-const query = {
-  // give the query a unique name
-  name: 'fetch-user',
-  text: 'SELECT * FROM parents WHERE id = $1',
-  values: [1]
-}
 
-// callback
-client.query(query, (err, res) => {
-  if (err) {
-    console.log(err.stack)
-  } else {
-    console.log(res.rows[0].lastname),
-    console.log('THE OTHER ROWWWWWWWWWWWWWWW***************************')
-  }
-})
 
 // promise
 
