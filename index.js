@@ -48,7 +48,7 @@ function connection(req,respond){
 	  // give the query a unique name
 	  name: 'fetch-user',
 	  text: 'SELECT * FROM parents WHERE id = $1',
-	  values: [id_Person]
+	  values: [2]
 	}
 
 	// callback
@@ -60,11 +60,10 @@ function connection(req,respond){
 	    console.log('THIS IS PERSON ROWWWWWWWWWWWWWWW***************************'),
 	    console.log(id_Person)
 	    
-	    var firstname = res.rows[0].firstname;
-	    var lastname = res.rows[0].lastname;
-	    var datebirth = res.rows[0].datebirth;
 
-	    params = {firstname : firstname, lastname:lastname, datebirth:datebirth};
+	    var lol = res.rows[id_Person].lastname;
+	    
+	    params = {some : lol};
 	    respond.render('pages/result', params)
 	  }
 	})
