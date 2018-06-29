@@ -57,9 +57,9 @@ function connection(req,res){
 	    console.log(res.rows[0].lastname),
 	    console.log('THE OTHER ROWWWWWWWWWWWWWWW***************************')
 
-	    var lol = res.rows[0].lastname;
-	    var params = {some : lol};
-	    res.render('pages/result', params);
+	    var lol = res.rows[0].lastname,
+	    var params = {some : lol},
+	    res.render('pages/result', params)
 	  }
 	})
 
