@@ -56,12 +56,12 @@ function connection(req,respond){
 	  if (err) {
 	    console.log(err.stack)
 	  } else {
-	    console.log(res.rows[0]),
+	    console.log(res.rows[0].firstname),
 	    console.log('THIS IS PERSON ROWWWWWWWWWWWWWWW***************************'),
 	    console.log(id_Person)
 	    
 
-	    var lol = res.rows[0];
+	    var lol = res.rows[0].firstname;
 	    params = {some : lol};
 	    respond.render('pages/result', params);
 	  }
