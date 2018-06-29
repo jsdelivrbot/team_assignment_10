@@ -48,7 +48,7 @@ function connection(req,respond){
 	  // give the query a unique name
 	  name: 'fetch-user',
 	  text: 'SELECT * FROM parents WHERE id = $1',
-	  values: [2]
+	  values: [1]
 	}
 
 	// callback
@@ -61,8 +61,7 @@ function connection(req,respond){
 	    console.log(id_Person)
 	    
 
-	    var lol = res.rows[id_Person].lastname;
-	    
+	    var lol = res.rows[0].lastname;
 	    params = {some : lol};
 	    respond.render('pages/result', params)
 	  }
