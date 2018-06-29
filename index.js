@@ -61,8 +61,8 @@ function connection(req,respond){
 	    console.log(id_Person)
 	    
 
-	    var lol = res.rows[0].firstname;
-	    params = {some : lol};
+	    var firstname = res.rows[0].firstname;
+	    params = {firstname : firstname};
 	    respond.render('pages/result', params);
 	  }
 	})
