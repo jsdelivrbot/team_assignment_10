@@ -54,12 +54,12 @@ function connection(req,res){
 	  if (err) {
 	    console.log(err.stack)
 	  } else {
-	    console.log(res.rows[0]),
+	    console.log(res.rows[0].lastname),
 	    console.log('THE OTHER ROWWWWWWWWWWWWWWW***************************')
 
-	    var lol = res.rows[0];
+	    var lol = res.rows[0].lastname;
 	    var params = {some : lol};
-	    res.render('pages/result', params);
+	    //res.render('pages/result', params)
 	  }
 	})
 
