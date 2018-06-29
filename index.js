@@ -60,10 +60,12 @@ function connection(req,res){
 	    console.log('THE OTHER ROWWWWWWWWWWWWWWW***************************')
 
 	    var lol = res.rows[0].lastname;
-	    params = {some : lol};
+	 
 	    //res.render('pages/result', params)
 	  }
 	})
+
+	   params = {some : 'lsklsk'};
     res.render('pages/result', params)
 
 
