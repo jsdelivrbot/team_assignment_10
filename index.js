@@ -52,7 +52,7 @@ function connection(number){
 
 	    var lol = res.rows[0].lastname;
 	    var params = {some : lol};
-	    res.render('pages/index', params);
+	    res.render('pages/result', params);
 	  }
 	})
 
