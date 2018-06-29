@@ -28,7 +28,7 @@ express()
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 
-function connection(req,res){
+function connection(req,respond){
 
 	var id = req.body.number;
 
@@ -60,13 +60,11 @@ function connection(req,res){
 	    console.log('THE OTHER ROWWWWWWWWWWWWWWW***************************')
 
 	    var lol = res.rows[0].lastname;
-	 
-	    //res.render('pages/result', params)
+	    params = {some : lol};
+	    respond.render('pages/result', params)
 	  }
 	})
-
-	   params = {some : 'lsklsk'};
-    res.render('pages/result', params)
+    //res.render('pages/result', params)
 
 
 
