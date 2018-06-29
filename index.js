@@ -54,10 +54,10 @@ function connection(req,res){
 	  if (err) {
 	    console.log(err.stack)
 	  } else {
-	    console.log(res.rows[id].lastname),
+	    console.log(res.rows[0].lastname),
 	    console.log('THE OTHER ROWWWWWWWWWWWWWWW***************************')
 
-	    var lol = res.rows[id].lastname;
+	    var lol = res.rows[0].lastname;
 	    var params = {some : lol};
 	    res.render('pages/result', params);
 	  }
