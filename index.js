@@ -61,8 +61,11 @@ function connection(req,respond){
 	    console.log(id_Person)
 	    
 
-	    var firstname = res.rows[0].firstname;
-	    params = {firstname : firstname};
+	    var firstName = res.rows[0].firstname;
+	    var lastName = res.rows[0].lastname;
+	    var dateBirth = res.rows[0].datebirth;
+
+	    params = {firstname : firstName, lastName: lastName, dateBirth : dateBirth};
 	    respond.render('pages/result', params);
 	  }
 	})
