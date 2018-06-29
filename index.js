@@ -57,7 +57,8 @@ client.query(query, (err, res) => {
   if (err) {
     console.log(err.stack)
   } else {
-    console.log('HERE IS  THE OTHER ROWWW********************************************')
+    console.log(res.rows[0]),
+    console.log('THE OTHER ROWWWWWWWWWWWWWWW***************************')
   }
 })
 
