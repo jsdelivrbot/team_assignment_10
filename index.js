@@ -15,7 +15,7 @@ express()
   .get('/getPerson', function(req, res){
 
 	res.render('pages/index');
-	connection();
+	connection(111);
 
 
   })
@@ -23,7 +23,7 @@ express()
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 
-function connection(){
+function connection(number){
 
 	  const pool = new Pool({
 	  connectionString: connectionString,
@@ -49,7 +49,10 @@ function connection(){
 	  } else {
 	    console.log(res.rows[0].lastname),
 	    console.log('THE OTHER ROWWWWWWWWWWWWWWW***************************')
-	    res.render('pages/index');
+
+	    var lol = res.rows[0].lastname;
+	    var params = {some : lol};
+	    res.render('pages/index', params);
 	  }
 	})
 
