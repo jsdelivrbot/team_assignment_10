@@ -19,7 +19,7 @@ express()
 
 
   })
-  .get('/result', function(req, res){
+  .post('/result', function(req, res){
 
 	connection(req,res);
 
