@@ -15,15 +15,22 @@ express()
   .get('/getPerson', function(req, res){
 
 	res.render('pages/index');
-	connection(111);
+
 
 
   })
+  .get('/result', function(req, res){
 
+	connection(req,res);
+
+
+  })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 
-function connection(number){
+function connection(req,res){
+
+	var id = req.body.number;
 
 	  const pool = new Pool({
 	  connectionString: connectionString,
@@ -47,10 +54,10 @@ function connection(number){
 	  if (err) {
 	    console.log(err.stack)
 	  } else {
-	    console.log(res.rows[0].lastname),
+	    console.log(res.rows[id].lastname),
 	    console.log('THE OTHER ROWWWWWWWWWWWWWWW***************************')
 
-	    var lol = res.rows[0].lastname;
+	    var lol = res.rows[id].lastname;
 	    var params = {some : lol};
 	    res.render('pages/result', params);
 	  }
