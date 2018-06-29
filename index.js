@@ -30,7 +30,7 @@ express()
 
 function connection(req,respond){
 
-	var id = req.body.number;
+	var id_Person = req.body.number;
 
 	var params = null;
 
@@ -57,8 +57,9 @@ function connection(req,respond){
 	    console.log(err.stack)
 	  } else {
 	    console.log(res.rows[0].lastname),
-	    console.log(id),
-	    console.log('THE OTHER ROWWWWWWWWWWWWWWW***************************')
+	    console.log('THIS IS PERSON ROWWWWWWWWWWWWWWW***************************'),
+	    console.log(id_Person)
+	    
 
 	    var lol = res.rows[0].lastname;
 	    params = {some : lol};
