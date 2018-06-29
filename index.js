@@ -12,7 +12,7 @@ express()
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
-  .get('/getPerson', function(req, res){
+  .get('/', function(req, res){
 
 	res.render('pages/index');
 
