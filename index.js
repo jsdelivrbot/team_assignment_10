@@ -48,7 +48,7 @@ function connection(req,respond){
 	  // give the query a unique name
 	  name: 'fetch-user',
 	  text: 'SELECT * FROM parents WHERE id = $1',
-	  values: [2]
+	  values: [id_Person]
 	}
 
 	// callback
