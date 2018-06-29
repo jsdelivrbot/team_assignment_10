@@ -32,6 +32,8 @@ function connection(req,res){
 
 	var id = req.body.number;
 
+	var params = null;
+
 	  const pool = new Pool({
 	  connectionString: connectionString,
 	})
@@ -58,10 +60,12 @@ function connection(req,res){
 	    console.log('THE OTHER ROWWWWWWWWWWWWWWW***************************')
 
 	    var lol = res.rows[0].lastname;
-	    var params = {some : lol};
+	    params = {some : lol};
 	    //res.render('pages/result', params)
 	  }
 	})
+    res.render('pages/result', params)
+
 
 
 }
